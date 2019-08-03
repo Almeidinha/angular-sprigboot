@@ -1,0 +1,31 @@
+
+<div class="container">
+    <ngb-alert *ngIf="errorMessage" type="warning" (close)="errorMessage = null">{{ errorMessage }}</ngb-alert>
+    <ngb-alert *ngIf="loginErrorMessage != null" type="warning" (close)="loginErrorMessage = null">{{ loginErrorMessage }}</ngb-alert>
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+            <!-- Icon -->
+            <div class="fadeIn first user-logo">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="82" viewBox="0 0 512 512">
+                    <path class="user-tie" d="M160 96c0-53.020 42.981-96 96-96s96 42.98 96 96c0 53.019-42.981 96-96 96s-96-42.981-96-96zM384.039 224h-17.712l-99.552 202.122 37.225-186.122-48-48-48 48 37.225 186.122-99.551-202.122h-17.712c-63.962 0-63.962 42.993-63.962 96v160h384v-160c0-53.007 0-96-63.961-96z"></path>
+                </svg>
+            </div>
+
+            <!-- Login Form -->
+            <form (ngSubmit)=handleBasicAuthLogin()>
+                <input type="text" id="username" class="fadeIn second" name="username" placeholder="login" [(ngModel)]="username">
+                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="password">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+</div>
+
+
