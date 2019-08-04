@@ -1,7 +1,7 @@
-package com.almeida.rest.webservices.restfullwebservices.controllers;
+package com.almeida.rest.webservices.restfullwebservices.basicauth.controllers;
 
 
-import com.almeida.rest.webservices.restfullwebservices.beans.AuthenticationBean;
+import com.almeida.rest.webservices.restfullwebservices.basicauth.beans.AuthenticationBean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

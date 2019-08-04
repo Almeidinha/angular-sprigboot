@@ -14,7 +14,7 @@
             </div>
 
             <!-- Login Form -->
-            <form (ngSubmit)=handleBasicAuthLogin()>
+            <form (ngSubmit)=handleJWTBasicAuthLogin()>
                 <input type="text" id="username" class="fadeIn second" name="username" placeholder="login" [(ngModel)]="username">
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" [(ngModel)]="password">
                 <input type="submit" class="fadeIn fourth" value="Log In">

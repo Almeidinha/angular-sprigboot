@@ -1,4 +1,4 @@
-package com.almeida.rest.webservices.restfullwebservices.beans;
+package com.almeida.rest.webservices.restfullwebservices.basicauth.beans;
 
 public class AuthenticationBean {
 

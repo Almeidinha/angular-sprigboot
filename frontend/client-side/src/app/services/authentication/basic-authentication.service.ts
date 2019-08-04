@@ -15,13 +15,6 @@ export class BasicAuthenticationService {
   
   constructor(private http: HttpClient) { }
 
-  /*authenticate = function(username: string, password: string): boolean {
-    if (username != '' && password != '') {
-      sessionStorage.setItem('authenticatedUser', username);
-      return true;
-    } else return false;    
-  }*/
-
   executeAuthenticationService(username: string, password: string): Observable<AuthenticationBean> {
     const basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
 
@@ -36,6 +29,20 @@ export class BasicAuthenticationService {
         data => {
           sessionStorage.setItem(AUTHENTICATED_USER, username);
           sessionStorage.setItem(USER_TOKEN, basicAuthHeaderString);
+          return data;
+        }
+      )
+    )
+  }
+
+  executeJWTAuthenticationService(username: string, password: string): Observable<AuthenticationBean> {
+    
+
+    return this.http.post<any>(`${API_URL}/authenticate`, {username, password}).pipe(
+      map(
+        data => {
+          sessionStorage.setItem(AUTHENTICATED_USER, username);
+          sessionStorage.setItem(USER_TOKEN, `Bearer ${data.token}`);
           return data;
         }
       )
