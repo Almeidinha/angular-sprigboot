@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class TodoHardCodedService {
 
     private static List<TodoBean> todos = new ArrayList<>();
-    private static int counter = 0;
+    private static long counter = 0;
 
     static {
         todos.add(new TodoBean(++counter, "Almeida", "Learn to Code", new Date(), false));
